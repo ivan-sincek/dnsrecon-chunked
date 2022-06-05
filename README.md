@@ -43,13 +43,13 @@ The tool will do this for you.
 Extract name servers from the results:
 
 ```bash
-for file in dnsrecon_chunked/*_chunked.json; do jq -r '.[] | if (.type == "NS") then (.target) else (empty) end | select(. != null)' "${file}"; done | sort -u -f | tee -a subdomains.txt
+for file in dnsrecon_chunked/*_chunked.json; do jq -r '.[] | if (.type == "NS") then (.target) else (empty) end | select(. != null)' "${file}"; done | sort -u -f | tee -a ns.txt
 ```
 
 Extract exchange servers from the results:
 
 ```bash
-for file in dnsrecon_chunked/*_chunked.json; do jq -r '.[] | if (.type == "MX") then (.exchange) else (empty) end | select(. != null)' "${file}"; done | sort -u -f | tee -a subdomains.txt
+for file in dnsrecon_chunked/*_chunked.json; do jq -r '.[] | if (.type == "MX") then (.exchange) else (empty) end | select(. != null)' "${file}"; done | sort -u -f | tee -a mx.txt
 ```
 
 Extract hosts from the results:
@@ -67,7 +67,7 @@ for file in dnsrecon_chunked/*_chunked.json; do jq -r '.[] | if (.type == "A" or
 Extract canonical names for a subdomain takeover vulnerability from the results:
 
 ```bash
-for file in dnsrecon_chunked/*_chunked.json; do jq -r '.[] | if (.type == "CNAME") then (.target) else (empty) end | select(. != null)' "${file}"; done | sort -u -f | tee -a canonical_names.txt
+for file in dnsrecon_chunked/*_chunked.json; do jq -r '.[] | if (.type == "CNAME") then (.target) else (empty) end | select(. != null)' "${file}"; done | sort -u -f | tee -a cnames.txt
 ```
 
 P.S. You can find `subdomains-top1mil.txt` wordlist located at `/usr/share/dnsrecon/` directory.
