@@ -6,7 +6,7 @@ Script will split a wordlist into multiple smaller chunks and run each chunk thr
 
 You can easily cancel brute forcing and continue later.
 
-Tested on Kali Linux v2021.2 (64-bit).
+Tested on Kali Linux v2022.2 (64-bit).
 
 Made for educational purposes. I hope it will help!
 
@@ -32,7 +32,7 @@ Run the script:
 ./dnsrecon_chunked.sh
 ```
 
-**Use DNSRecon [v0.10.0](https://github.com/darkoperator/dnsrecon/releases/tag/0.10.0) for best results.**
+**Use DNSRecon [v1.1.0](https://github.com/darkoperator/dnsrecon/releases/tag/1.1.0) for best results.**
 
 If you want to run DNSRecon as a Python3 script, replace `dnsrecon` with e.g. `python3 /root/Desktop/dnsrecon-0.10.0/dnsrecon.py`.
 
